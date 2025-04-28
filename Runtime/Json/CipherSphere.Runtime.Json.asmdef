@@ -1,0 +1,19 @@
+{
+    "name": "CipherSphere.Runtime.Json",
+    "rootNamespace": "CipherSphere.Runtime.Json",
+    "references": [
+        "GUID:140b279eb806ffa4ab6b11507dbb239d",
+        "GUID:dd8044ec35c080a408bdeecd680852a7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "com.chinpangx.ciphersphere",
+    "version": "1.0.0",
+    "displayName": "CipherSphere",
+    "description": "A robust service for securely managing data storage in Unity, supporting JSON and encrypted binary formats.",
+    "unity": "2023.1",
+    "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+    },
+    "keywords": [
+        "unity",
+        "savedata"
+    ],
+    "author": {
+        "name": "shota.deai"
+    }
+}
