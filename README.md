@@ -37,7 +37,21 @@ namespace CipherSphere.Runtime.Core
 }
 ```
 
-暗号化するセーブデータのファイル名は、'''CRC32アルゴリズム'''を, 利用してファイル名のハッシュ化を行います。
+暗号化するセーブデータのファイル名は、```CRC32アルゴリズム```を, 利用してファイル名のハッシュ化を行います。
+```
+public class SecurityDataStorageService : IDataStorage
+{
+    private readonly string dataFullPath;
+    private readonly string password;
+
+    public SecurityDataStorageService(string fileName, string appSalt, string password)
+    {
+        CryptographyExecutor.Setup(appSalt);
+        this.password = password;
+        dataFullPath = $"{DataStorageConfig.DataPath}/{Crc32.Compute($"{fileName}_{password}")}.bin";
+    }
+}
+```
 
 # ライセンス
 本ソフトウェアは, MITライセンスで公開しています。
