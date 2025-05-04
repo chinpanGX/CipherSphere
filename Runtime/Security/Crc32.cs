@@ -6,7 +6,7 @@ namespace CipherSphere.Runtime.Security
     internal static class Crc32
     {
         private static readonly uint[] Table = new uint[256];
-        
+
         static Crc32()
         {
             const uint polynomial = 0xedb88320;
@@ -20,10 +20,10 @@ namespace CipherSphere.Runtime.Security
                 Table[i] = crc;
             }
         }
-        
-        public static string Compute(string fileName, string password)
+
+        public static string Compute(string source)
         {
-            var input = Encoding.UTF8.GetBytes($"{fileName}_{password}");
+            var input = Encoding.UTF8.GetBytes(source);
             var crc = input.Aggregate(0xffffffff, (current, b) => (current >> 8) ^ Table[(current & 0xff) ^ b]);
             return (~crc).ToString("x8"); // ゼロ埋めの8桁の16進数
         }

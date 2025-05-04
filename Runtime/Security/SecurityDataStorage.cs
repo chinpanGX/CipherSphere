@@ -13,7 +13,7 @@ namespace CipherSphere.Runtime.Security
         {
             CryptographyExecutor.Setup(appSalt);
             this.password = password;
-            dataFullPath = $"{DataStorageConfig.DataPath}/{Crc32.Compute(fileName, password)}.bin";
+            dataFullPath = $"{DataStorageConfig.DataPath}/{Crc32.Compute($"{fileName}_{password}")}.bin";
         }
 
         public bool Exists()
